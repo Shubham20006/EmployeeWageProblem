@@ -1,2 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Welcome to the Emoloyee Wage Computation Program");
+﻿namespace EmployeeWageProblem
+{
+    public class Wage
+    {
+        public static void Main(string[] args)
+        {
+            Employee.EmpComputation();
+        }
+    }
+}
