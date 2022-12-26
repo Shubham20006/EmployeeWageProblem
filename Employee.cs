@@ -14,8 +14,10 @@ namespace EmployeeWageProblem
             int Is_Full_Time = 1;
             int Is_Part_Time = 2;
             int Wage_Per_Hour = 20;
+            int Working_Days_IN_Month = 20;
             int FullDayHour = 8;
             int DailyEmpWage;
+            int MonthlyEmpWages;
             Random R = new Random();
             int empCheck = R.Next(3);
 
@@ -26,6 +28,8 @@ namespace EmployeeWageProblem
                 FullDayHour = 8;
                 DailyEmpWage = Wage_Per_Hour * FullDayHour;
                 Console.WriteLine("Daily employee wage is :- " + DailyEmpWage);
+                MonthlyEmpWages = DailyEmpWage * Working_Days_IN_Month;
+                Console.WriteLine("Monthly employee wage is :- " + MonthlyEmpWages);
                         break;
             }
                 case 2:
@@ -34,6 +38,8 @@ namespace EmployeeWageProblem
                 int PartTimeHour = 4;
                 DailyEmpWage = Wage_Per_Hour * PartTimeHour;
                 Console.WriteLine("Daily employee wage of Part time  is :- " + DailyEmpWage);
+                MonthlyEmpWages = DailyEmpWage * Working_Days_IN_Month;
+                Console.WriteLine("Monthly employee wage is :- " + MonthlyEmpWages);
                         break;
             }
                 default:
@@ -42,6 +48,8 @@ namespace EmployeeWageProblem
                 FullDayHour = 0;
                 DailyEmpWage = Wage_Per_Hour * FullDayHour;
                 Console.WriteLine("Daily employee wage is :- " + DailyEmpWage);
+                MonthlyEmpWages = DailyEmpWage * Working_Days_IN_Month;
+                Console.WriteLine("Monthly employee wage is :- " + MonthlyEmpWages);
                         break;
             }
         }
