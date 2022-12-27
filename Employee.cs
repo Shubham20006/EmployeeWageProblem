@@ -31,7 +31,7 @@ namespace EmployeeWageProblem
                 case 2:
             {
                 Console.WriteLine("Employee present PartTime.");
-                emoHour = 4;
+                empHour = 4;
                      break;
             }
                 default:
