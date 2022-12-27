@@ -16,12 +16,12 @@ namespace EmployeeWageProblem
             int Wage_Per_Hour = 20;
             int Working_Days_IN_Month = 20;
             int empHour;
-            int DailyEmpWage;
             int MonthlyEmpWages;
             Random R = new Random();
             int empCheck = R.Next(3);
-
-            switch (empCheck) {
+         for(int i=0;i<Working_Days_IN_Month;i++)
+         {
+             switch (empCheck) {
                 case 1:    
             {
                 Console.WriteLine("Employee is present.");
@@ -31,19 +31,21 @@ namespace EmployeeWageProblem
                 case 2:
             {
                 Console.WriteLine("Employee present PartTime.");
-                int PartTimeHour = 4;
+                emoHour = 4;
                      break;
             }
                 default:
             {
                 Console.WriteLine("Employee is absent.");
-                FullDayHour = 0;
+                empHour = 0;
                    break;
             }
-                     DailyEmpWage = Wage_Per_Hour * empHour;
-                Console.WriteLine("Daily employee wage is :- " + DailyEmpWage);
-                MonthlyEmpWages = DailyEmpWage * Working_Days_IN_Month;
+                     
+                
+                MonthlyEmpWages = empHour * Wage_Per_Hour ;
+          }
                 Console.WriteLine("Monthly employee wage is :- " + MonthlyEmpWages);
+          
         }
         }
     }
