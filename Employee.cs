@@ -51,7 +51,7 @@ namespace EmployeeWageProblem
            }
             Console.WriteLine("Total working hours in month are :- " + TotalHrs);
             MonthlyEmpWages = TotalHrs * Wage_Per_Hour;
-            Console.WriteLine("Monthly employee wage is :- " + MonthlyEmpWages)          
+            Console.WriteLine("Monthly employee wage is :- " + MonthlyEmpWages);          
         }
     }
 }
