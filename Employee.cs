@@ -12,16 +12,17 @@ namespace EmployeeWageProblem
         public static void EmpComputation()
         {
            
-            int Wage_Per_Hour = 20;
+           int Wage_Per_Hour = 20;
             int Max_Days_IN_Month = 20;
             int Max_HrsInMonth = 100;
             int empHour;
             int totalHours = 0;
             int totalDays = 0;
-            Random R = new Random();
-            int empCheck = R.Next(3);
-            while (totalHours < Max_HrsInMonth && totalDays < Max_Days_IN_Month)
+         
+            while (totalHours < Max_HrsInMonth || totalDays < Max_Days_IN_Month)
             {
+                Random R = new Random();
+                int empCheck = R.Next(3);
                 totalDays++;
                 switch (empCheck)
                 {
@@ -51,7 +52,6 @@ namespace EmployeeWageProblem
                 int sallery = totalHours * Wage_Per_Hour;
                 Console.WriteLine("Total employee wage is :- " + sallery);
                 Console.WriteLine("\n");
-
             }
 
         }
