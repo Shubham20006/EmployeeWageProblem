@@ -10,13 +10,26 @@ namespace EmployeeWageProblem
     {
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
-
-        public static int EmpComputation(string company,int Wage_Per_Hour, int Max_Days_IN_Month, int Max_HrsInMonth)
+        private string company;
+        private int Wage_Per_Hour;
+        private int Max_Days_IN_Month;
+        private int Max_HrsInMonth;
+        private int sallery;
+       public Employee(string company, int Wage_Per_Hour, int Max_Days_IN_Month, int Max_HrsInMonth)
+        {
+            this.company = company;
+            this.Wage_Per_Hour = Wage_Per_Hour;
+            this.Max_Days_IN_Month = Max_Days_IN_Month;
+            this.Max_HrsInMonth = Max_HrsInMonth;
+               
+        }
+        public void EmpComputation()
         {
             int empHour;
             int totalHours = 0;
             int totalDays = 0;
-            Console.WriteLine(company);
+            Console.WriteLine();
+            Console.WriteLine("***** "+company+" *****");
             while (totalHours < Max_HrsInMonth && totalDays < Max_Days_IN_Month)
             {
                 Random R = new Random();
@@ -44,12 +57,12 @@ namespace EmployeeWageProblem
                 
                 Console.WriteLine("Day# : " + totalDays + " emp Hrs : " + empHour);
             }
-                int sallery = totalHours * Wage_Per_Hour;
+                 sallery = totalHours * Wage_Per_Hour;
                 Console.WriteLine("Total employee wage of {0} Hrs is :- {1}",totalHours , sallery);
-                Console.WriteLine("\n");
-            return sallery;
-            
-
+        }
+        public string Return()
+        {
+            return ("Total employee wage of " + this.company+ " is :-  "  +this.sallery);
         }
     }
 }
