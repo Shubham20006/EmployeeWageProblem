@@ -8,51 +8,47 @@ namespace EmployeeWageProblem
 {
     public class Employee
     {
+        public const int IS_PART_TIME = 1;
+        public const int IS_FULL_TIME = 2;
 
-        public static void EmpComputation()
+        public static int EmpComputation(string company,int Wage_Per_Hour, int Max_Days_IN_Month, int Max_HrsInMonth)
         {
-           
-            int Wage_Per_Hour = 20;
-            int Max_Days_IN_Month = 20;
-            int Max_HrsInMonth = 100;
             int empHour;
             int totalHours = 0;
             int totalDays = 0;
-            Random R = new Random();
-            int empCheck = R.Next(3);
+            Console.WriteLine(company);
             while (totalHours < Max_HrsInMonth && totalDays < Max_Days_IN_Month)
             {
+                Random R = new Random();
+                int empCheck = R.Next(3);
                 totalDays++;
                 switch (empCheck)
                 {
-                    case 1:
+                    case IS_FULL_TIME:
                         {
-                            //Console.WriteLine("Employee is present.");
                             empHour = 8;
                             break;
                         }
-                    case 2:
+                    case IS_PART_TIME:
                         {
-                            //Console.WriteLine("Employee present PartTime.");
                             empHour = 4;
                             break;
                         }
                     default:
                         {
-                            //Console.WriteLine("Employee is absent.");
                             empHour = 0;
                             break;
                         }
                 }
                 totalHours = (totalHours + empHour);
-
-
-                Console.WriteLine("Total employee hours are :- " + totalHours);
-                int sallery = totalHours * Wage_Per_Hour;
-                Console.WriteLine("Total employee wage is :- " + sallery);
-                Console.WriteLine("\n");
-
+                
+                Console.WriteLine("Day# : " + totalDays + " emp Hrs : " + empHour);
             }
+                int sallery = totalHours * Wage_Per_Hour;
+                Console.WriteLine("Total employee wage of {0} Hrs is :- {1}",totalHours , sallery);
+                Console.WriteLine("\n");
+            return sallery;
+            
 
         }
     }
