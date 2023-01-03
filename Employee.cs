@@ -48,7 +48,7 @@ namespace EmployeeWageProblem
 
 
                 Console.WriteLine("Total employee hours are :- " + totalHours);
-                int sallery = totalHours * totalDays * Wage_Per_Hour;
+                int sallery = totalHours * Wage_Per_Hour;
                 Console.WriteLine("Total employee wage is :- " + sallery);
                 Console.WriteLine("\n");
 
