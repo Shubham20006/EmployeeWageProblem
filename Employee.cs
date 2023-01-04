@@ -11,7 +11,7 @@ namespace EmployeeWageProblem
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
 
-        private List<CompanyEmpWage> CompanywageArr=new List<CompanyEmpWage>();
+        private List<CompanyEmpWage> CompanywageArr;
         private int noOfCompany = 0;
         public Employee()
         {
@@ -21,17 +21,15 @@ namespace EmployeeWageProblem
         {
             CompanyEmpWage Emp = new CompanyEmpWage(company, Wage_Per_Hour, Max_Days_IN_Month,Max_HrsInMonth);
             AddCompanyEmpWageToList(Emp);
-            void AddCompanyEmpWageToList(CompanyEmpWage Emp) => CompanywageArr.Add(Emp);
-            noOfCompany++;
+           this.CompanywageArr.Add(Emp);
         }
 
         public void EmpComputation()
         {
-            for (int i = 0; i < noOfCompany; i++)
+             foreach (CompanyEmpWage Emp in this.CompanywageArr)
             {
-                CompanywageArr[i].setEmpWage(EmpComputation(CompanywageArr[i]));
-                Console.WriteLine(CompanywageArr[i].Return());
-
+                Emp.setEmpWage(this.EmpComputation(Emp));
+                Console.WriteLine(Emp.Return());
             }
         }
 
