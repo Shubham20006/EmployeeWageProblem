@@ -4,13 +4,14 @@
     {
         public static void Main(string[] args)
         {
-            Employee TCS=new Employee("TCS",40,25,150);           
-            TCS.EmpComputation();
-            Console.WriteLine(TCS.Return());
+            Employee obj=new Employee();
 
-            Employee Reliance = new Employee("Reliance", 45, 23, 150);
-            Reliance.EmpComputation();
-            Console.WriteLine(Reliance.Return());
+            obj.addCompanies("deloitte", 20, 15, 90);
+
+            obj.addCompanies("Reliance", 45, 23, 150);
+
+            obj.EmpComputation();
+           
         }
     }
 }
