@@ -6,32 +6,33 @@ using System.Threading.Tasks;
 
 namespace EmployeeWageProblem
 {
-    public class Employee
+    public class Employee:EmpWageInterface
     {
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
 
-        private List<CompanyEmpWage> CompanywageArr=new List<CompanyEmpWage>();
-        private int noOfCompany = 0;
+        private List<CompanyEmpWage> CompanywageArr;
+        private Dictionary<string,CompanyEmpWage> getting;
+
         public Employee()
         {
             CompanywageArr = new List<CompanyEmpWage>();
+           getting = new Dictionary<string,CompanyEmpWage>();
         }
         public void addCompanies(string company, int Wage_Per_Hour, int Max_Days_IN_Month, int Max_HrsInMonth)
         {
             CompanyEmpWage Emp = new CompanyEmpWage(company, Wage_Per_Hour, Max_Days_IN_Month,Max_HrsInMonth);
-            AddCompanyEmpWageToList(Emp);
-            void AddCompanyEmpWageToList(CompanyEmpWage Emp) => CompanywageArr.Add(Emp);
-            noOfCompany++;
+            this.CompanywageArr.Add(Emp);
+            this.getting.Add(company, Emp);
+            
         }
 
         public void EmpComputation()
         {
-            for (int i = 0; i < noOfCompany; i++)
+            foreach (CompanyEmpWage Emp in this.CompanywageArr)
             {
-                CompanywageArr[i].setEmpWage(EmpComputation(CompanywageArr[i]));
-                Console.WriteLine(CompanywageArr[i].Return());
-
+                Emp.setEmpWage(this.EmpComputation(Emp));
+                Console.WriteLine(Emp.Return());
             }
         }
 
@@ -80,6 +81,12 @@ namespace EmployeeWageProblem
                 }
             }
             return emp.sallery;
+
+        }
+        public  int getTotalwage(string company)
+        {
+            return this.getting[company].sallery;
+
         }
        
     }

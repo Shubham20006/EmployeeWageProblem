@@ -11,7 +11,7 @@
             obj.addCompanies("Reliance", 45, 23, 150);
 
             obj.EmpComputation();
-           
+            Console.WriteLine("Total wage for Reliance company : " + obj.getTotalwage("Reliance"));           
         }
     }
 }
