@@ -11,15 +11,17 @@ namespace EmployeeWageProblem
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
 
-        private CompanyEmpWage[] CompanywageArr;
+        private List<CompanyEmpWage> CompanywageArr=new List<CompanyEmpWage>();
         private int noOfCompany = 0;
         public Employee()
         {
-            this.CompanywageArr = new CompanyEmpWage[5];
+            CompanywageArr = new List<CompanyEmpWage>();
         }
         public void addCompanies(string company, int Wage_Per_Hour, int Max_Days_IN_Month, int Max_HrsInMonth)
         {
-            CompanywageArr[noOfCompany] = new CompanyEmpWage(company, Wage_Per_Hour, Max_Days_IN_Month,Max_HrsInMonth);
+            CompanyEmpWage Emp = new CompanyEmpWage(company, Wage_Per_Hour, Max_Days_IN_Month,Max_HrsInMonth);
+            AddCompanyEmpWageToList(Emp);
+            void AddCompanyEmpWageToList(CompanyEmpWage Emp) => CompanywageArr.Add(Emp);
             noOfCompany++;
         }
 
