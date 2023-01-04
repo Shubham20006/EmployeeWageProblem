@@ -38,7 +38,7 @@ namespace EmployeeWageProblem
 
         private int EmpComputation(CompanyEmpWage emp)
         {
-            int empHour;
+            int empHour=0;
             int totalHours = 0;
             int totalDays = 0;
             int totalSallery = 0;
@@ -76,7 +76,7 @@ namespace EmployeeWageProblem
                 {
                     emp.sallery += totalSallery;
 
-                    Console.WriteLine("Day# : " + totalDays + " =>  emp Hrs : " + empHour + " =>  EmpWage: " + totalSallery);
+                    Console.WriteLine("Day# : " +totalDays+ " =>  emp Hrs : " +empHour+ " =>  EmpWage: " +totalSallery);
                 }
             }
             return emp.sallery;
