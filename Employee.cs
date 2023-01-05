@@ -20,7 +20,7 @@ namespace EmployeeWageProblem
         public void addCompanies(string company, int Wage_Per_Hour, int Max_Days_IN_Month, int Max_HrsInMonth)
         {
             CompanyEmpWage Emp = new CompanyEmpWage(company, Wage_Per_Hour, Max_Days_IN_Month,Max_HrsInMonth);
-            AddCompanyEmpWageToList(Emp);
+            
            this.CompanywageArr.Add(Emp);
         }
 
